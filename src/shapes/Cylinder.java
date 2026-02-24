@@ -17,20 +17,20 @@ public class Cylinder extends Shape
 		this.radius = radius;
 	}
 
-	public Cylinder(double Height,double Radius ) {
-		this.height = Height;
-		this.radius = Radius;
+	public Cylinder(double height,double radius ) {
+		super(height);
+		this.radius = radius;
 	}
 	
 	@Override
 	public double calcVolume() {
 		// TODO Auto-generated method stub
-		return calcBaseArea() * this.height;
+		return this.calcBaseArea() * this.getHeight();
 		
 	}
 	@Override
 	public double calcBaseArea() {
 		// TODO Auto-generated method stub
-		return Math.PI * Math.pow(this.radius,2);
+		return Math.PI * Math.pow(this.getRadius(),2);
 	}
 }

@@ -1,7 +1,13 @@
 package shapes;
 
 public abstract class Prism extends Shape{
-	protected double side;
+	private double side;
+
+	public Prism(double height, double side) {
+		// TODO Auto-generated constructor stub
+		super(height);
+		this.side = side;
+	}
 
 	/**
 	 * @return the side

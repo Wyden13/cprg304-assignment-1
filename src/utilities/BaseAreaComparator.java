@@ -1,7 +1,12 @@
 package utilities;
 import java.util.Comparator;
+
 import shapes.*;
-public class CompareBaseArea implements Comparator<Shape> {
+public final class BaseAreaComparator implements Comparator<Shape> {
+	
+	public static BaseAreaComparator bsComparator = new BaseAreaComparator();
+	
+	@Override
 	public int compare(Shape a,Shape b)  {
 		if(a.calcBaseArea() > b.calcBaseArea()) {
 			return 1;

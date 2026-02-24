@@ -18,13 +18,13 @@ public class Pyramid extends Shape
 	
 	public Pyramid() {};
 	public Pyramid(double height,double side) {
-		this.side = side;
-		this.height=height;
+		super(height);
+		this.setSide(side);
 	}
 	@Override
 	public double calcVolume() {
 		// TODO Auto-generated method stub
-		return this.calcBaseArea()*this.height *1/3;
+		return this.calcBaseArea()*this.getHeight() *1/3;
 	}
 	@Override
 	public double calcBaseArea() {

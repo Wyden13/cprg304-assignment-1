@@ -2,22 +2,22 @@ package shapes;
 
 public class SquarePrism extends Prism
 {
-	public SquarePrism() {};
 	public SquarePrism(double height,double side) {
-		this.height = height;
-		this.side=  side;
+//		this.height = height;
+//		this.side=  side;
+		super(height,side);
 	};
 
 	@Override
 	public double calcVolume() {
 		// TODO Auto-generated method stub
-		return this.calcBaseArea() * this.height;
+		return this.calcBaseArea() * this.getHeight();
 	}
 
 	@Override
 	public double calcBaseArea() {
 		// TODO Auto-generated method stub
-		return Math.pow(this.side, 2);
+		return Math.pow(this.getSide(), 2);
 	}
 	
 }
