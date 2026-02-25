@@ -14,8 +14,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileHandler {
-	private FileHandler() {
-	}
+	private FileHandler() {}
 
 	public static final Shape[] readShapesFromFile(String fileName) {
 
@@ -28,13 +27,13 @@ public class FileHandler {
 
 			int count = 0;
 
-			while (scanner.hasNextLine() && count < n) {
+			while (scanner.hasNext() && count < n) {
 
 				String line = scanner.nextLine().trim();
 				if (line.isEmpty())
 					continue;
 
-				String[] parts = line.split("\\s*,\\s*");
+				String[] parts = line.split("\\s+");
 
 				String type = parts[0];
 				double h = Double.parseDouble(parts[1]);

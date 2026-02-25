@@ -9,8 +9,6 @@ public final class quickSort {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
-	
-    // ---------- 1) QuickSort using Comparable (natural ordering) ----------
 	public static void quickSort(Shape[]arr,int left,int right,char t) {
 		if(left<right) {
 			int pivot = partition(arr, left,right,t);
