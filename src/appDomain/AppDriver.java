@@ -1,16 +1,8 @@
 package appDomain;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import shapes.*;
 import sortingAlgorithms.SortSwitch;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 
 /**
  * <p>
@@ -66,8 +58,26 @@ public class AppDriver {
 		SortSwitch.someSort(sortedShapes, compareType, sortType);
 		
 		System.out.println(SortSwitch.isSorted(sortedShapes, compareType));
-		for (Shape s : sortedShapes) {
-		    System.out.println(s);
+		
+		switch(compareType) {
+		case 'h':
+			for(int i = 0;i<sortedShapes.length;i++) {
+				System.out.printf("%d -th element: %4s %32s %4s Height: %.3f%n",
+						i," ",sortedShapes[i].getClass(),sortedShapes[i].getHeight());
+			}
+			break;
+		case 'v':
+			for(int i = 0;i<sortedShapes.length;i++) {
+				System.out.printf("%d -th element: %4s %32s %4s Volume: %.3f%n",
+						i," ",sortedShapes[i].getClass()," ",sortedShapes[i].calcVolume());
+			};
+			break;
+		case 'b':
+			for(int i = 0;i<sortedShapes.length;i++) {
+				System.out.printf("%d -th element: %4s %32s %4s Area: %.3f%n",
+						i," ",sortedShapes[i].getClass(),sortedShapes[i].calcBaseArea());
+			};
+			break;
 		}
 	}
 	public static void exitWithError(String message) {
