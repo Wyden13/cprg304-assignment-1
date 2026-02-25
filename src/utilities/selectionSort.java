@@ -30,7 +30,7 @@ public final class selectionSort {
 		for (int i=0;i<arr.length;i++) {
 			T min = arr[i];
 			int idx= i ;
-			for (int j = j+1;j<arr.length;j++) {
+			for (int j = i+1;j<arr.length;j++) {
 				if(comp.compare(arr[j],min) < 0) {
 					min = arr[j];
 					idx= j;

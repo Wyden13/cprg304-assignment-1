@@ -15,7 +15,8 @@ public final class bubbleSort {
 		for(int i = 0; i<arr.length-1;i++) {
 			flag = false;
 			for(int j = 0; j <arr.length-1-i;j++) {
-				if(((Shape) arr[j]).compareTo((Shape)arr[j+1]) == -1) {
+				//if(((Shape) arr[j]).compareTo((Shape)arr[j+1]) < 0) {
+				 if(((Shape) arr[j]).compareTo((Shape)arr[j+1]) == -1) {
 					swapElements(arr,j,j+1);
 					flag = true;
 				}
@@ -29,7 +30,8 @@ public final class bubbleSort {
 		for (int i = 0; i< arr.length-1; i ++) {
 			flag = false;
 			for(int j = 0; j<arr.length -1 -i; j++ ) {
-				if(comp.compare(arr[j], arr[j+1]) == -1) {
+				// if(comp.compare(arr[j], arr[j+1]) < 0) {
+				 if(comp.compare(arr[j], arr[j+1]) == -1) {
 					T temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;

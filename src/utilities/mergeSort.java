@@ -3,6 +3,58 @@ package utilities;
 import java.util.ArrayList;
 
 public final class mergeSort {
+
+    public static <T extends Comparable<? super T>> void mergeSortDescending(T[] arr, int left, int right) {
+        if (left >= right)
+            return;
+
+        int mid = left + (right - left) / 2;
+
+        mergeSortDescending(arr, left, mid);
+        mergeSortDescending(arr, mid + 1, right);
+        mergeDescending(arr, left, mid, right);
+    }
+
+    private static <T extends Comparable<? super T>> void mergeDescending(T[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        ArrayList<T> leftArr = new ArrayList<>();
+        ArrayList<T> rightArr = new ArrayList<>();
+
+        // copy data
+        for (int i = 0; i < n1; i++)
+            leftArr.add(arr[left + i]);
+
+        for (int j = 0; j < n2; j++)
+            rightArr.add(arr[mid + 1 + j]);
+
+        int i = 0, j = 0;
+        int k = left;
+
+        //  descending
+        while (i < n1 && j < n2) {
+            if (leftArr.get(i).compareTo(rightArr.get(j)) >= 0) {
+                arr[k++] = leftArr.get(i++);
+            } else {
+                arr[k++] = rightArr.get(j++);
+            }
+        }
+
+        // remaining left
+        while (i < n1) {
+            arr[k++] = leftArr.get(i++);
+        }
+
+        // remaining right
+        while (j < n2) {
+            arr[k++] = rightArr.get(j++);
+        }
+    }
+}
+
+/*
+public final class mergeSort {
 	
 	public static <T> void mergeSort(T[] arr, int left, int right){
 	    if (left >= right)
@@ -60,3 +112,4 @@ public final class mergeSort {
 	}
 
 }
+*/
