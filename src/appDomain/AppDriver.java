@@ -53,25 +53,55 @@ public class AppDriver {
 		if (sortType == null) exitWithError("Missing required option: -f <filename>");
 		
 		System.out.println("File: " + fileName);
-		System.out.println("Compare by: " + compareType);
-		System.out.println("Sort type: " + sortType);
-
+		System.out.println("Compare by: " + compareTypeName(compareType));
+		System.out.println("Sort type: " + sortTypeName(sortType) + "\n");
 		
+		// Read Shapes from file
 		Shape[] shapes = FileHandler.readShapesFromFile(fileName);
+		
 		Shape[] sortedShapes = shapes.clone();
 		for(Shape s: shapes) {
 			System.out.println(s);
 		}
 		
+		long startTime = System.nanoTime();
+		
 		SortSwitch.someSort(sortedShapes, compareType, sortType);
 		
-		System.out.println(SortSwitch.isSorted(sortedShapes, compareType));
+		System.out.println("\nSorted Shapes (by " + compareTypeName(compareType) + ")\n");
 		for (Shape s : sortedShapes) {
 		    System.out.println(s);
 		}
+			
+		long endTime = System.nanoTime();
+		
+		double durationSort = (endTime - startTime)/ 1_000_000.0;
+		
+		System.out.println("\nSorting Duration: " + durationSort + " ms");
 	}
 	public static void exitWithError(String message) {
 		System.out.print(message);
 		System.exit(1);
+	}
+	
+	public static String sortTypeName(char sortType) {
+		switch (sortType) {
+		case 'b': return "Bubble Sort";
+		case 'i': return "Insertion Sort";
+		case 's': return "Selection Sort";
+		case 'h': return "Heap Sort";
+		case 'm': return "Merge Sort";
+		case 'q': return "Quick Sort";
+		default: return "Unknown Sort";
+		}
+	}
+	
+	public static String compareTypeName(char compareType) {
+		switch (compareType) {
+		case 'h' : return "Height";
+		case 'v' : return "Volume";
+		case 'b' : return "Base Area";
+		default: return "Unknown Compare";
+		}
 	}
 }

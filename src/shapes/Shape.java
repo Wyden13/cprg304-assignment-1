@@ -42,6 +42,6 @@ public abstract class Shape implements Comparable<Shape> {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return String.format("%s | h:%.3f | vol: %.3f ", this.getClass(),this.getHeight(),this.calcVolume());
+		return String.format("%s | h:%.3f | vol: %.3f ", this.getClass().getSimpleName(),this.getHeight(),this.calcVolume());
 	}	
 }
