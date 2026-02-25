@@ -1,5 +1,5 @@
 package sortingAlgorithms;
-import java.util.Comparator;
+
 import shapes.Shape;
 import utilities.Comparision;
 

@@ -27,7 +27,6 @@ public final class mergeSort {
 		            arr[k++] = rightArr[j++];
 		        }
 		 }
-		    // Copy the remaining elements of L[], if there are any
 		 while (i < leftArr.length) arr[k++] = leftArr[i++];
 		 while (j < rightArr.length) arr[k++] = rightArr[j++];
 	}

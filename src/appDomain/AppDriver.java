@@ -9,6 +9,7 @@ import sortingAlgorithms.SortSwitch;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -26,7 +27,7 @@ public class AppDriver {
 	 * @param args The input to control the execution of the application.
 	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 
 		String fileName = null;
@@ -35,11 +36,7 @@ public class AppDriver {
 
 		for (String arg : args) {
 			arg = arg.trim();
-
-			// Remove surrounding quotes if exist
-//			if (arg.contains("\"")) {
-//				arg = arg.replace("\"", "");
-//			}
+			
 			String lowerArg = arg.toLowerCase();
 
 			if (lowerArg.startsWith("-f")) {
@@ -61,11 +58,15 @@ public class AppDriver {
 
 		
 		Shape[] shapes = FileHandler.readShapesFromFile(fileName);
+		Shape[] sortedShapes = shapes.clone();
+		for(Shape s: shapes) {
+			System.out.println(s);
+		}
 		
-		SortSwitch.someSort(shapes, compareType, sortType);
+		SortSwitch.someSort(sortedShapes, compareType, sortType);
 		
-		System.out.println(SortSwitch.isSorted(shapes, compareType));
-		for (Shape s : shapes) {
+		System.out.println(SortSwitch.isSorted(sortedShapes, compareType));
+		for (Shape s : sortedShapes) {
 		    System.out.println(s);
 		}
 	}
