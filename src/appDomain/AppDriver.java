@@ -37,6 +37,7 @@ public class AppDriver {
 				value = stripOuterQuotes(value);
 
 				value = value.replace("\"", "");
+				value = value.replace("\\","/");
 
 				if (value.isEmpty())
 					exitWithError("Missing filename after -f");

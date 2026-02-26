@@ -23,10 +23,10 @@ public class FileHandler {
 
     public static Shape[] readShapesFromFile(String fileName) {
         try (Scanner scanner = new Scanner(new File(fileName))) {
-
-            if (!scanner.hasNextInt()) {
-                throw new IllegalArgumentException("First value in file must be an integer shape count.");
-            }
+//
+//            if (!scanner.hasNextInt()) {
+//                throw new IllegalArgumentException("First value in file must be an integer shape count.");
+//            }
 
             int n = scanner.nextInt();
             scanner.nextLine();
@@ -68,7 +68,7 @@ public class FileHandler {
      * @param type
      * @param a
      * @param b
-     * @return shape instance
+     * @return shape instance 
      */
 
     public static Shape createShape(String type, double a, double b) {
