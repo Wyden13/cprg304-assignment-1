@@ -5,7 +5,7 @@ import utilities.Comparision;
 
 public final class SortSwitch {
 
-	public static final <T> void sort(Shape[] arr, char comp, char sortType) {
+	public static final void sort(Shape[] arr, char comp, char sortType) {
 
 		switch (sortType) {
 		case 'b':
@@ -24,6 +24,7 @@ public final class SortSwitch {
 			quickSort.quickSort(arr,0,arr.length-1,comp);
 			break;
 		case 's':
+			
 			selectionSort.selectionSort(arr, comp);
 			break;
 		default:
@@ -32,7 +33,7 @@ public final class SortSwitch {
 	}
 
 	public static void someSort(Shape[] array, char comp, char sortType) {
-		while(!isSorted(array,comp)) {
+		while(!isSorted(array,comp)) {	
 			sort(array,comp,sortType);
 		}
 	}

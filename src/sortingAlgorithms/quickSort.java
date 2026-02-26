@@ -21,7 +21,7 @@ public final class quickSort {
 	        Shape pivot = arr[right];
 
 	        for (int j = left; j < right; j++) {
-	            if (Comparision.compare(arr[j], pivot, t)<0) {
+	            if (Comparision.compare(arr[j], pivot, t)>0) {
 	                i++;
 	                swapElements(arr, i, j);
 	            }

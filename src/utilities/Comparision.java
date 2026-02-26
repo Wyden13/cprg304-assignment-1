@@ -6,7 +6,7 @@ import shapes.*;
 public final class Comparision {
 	public static Comparator<Shape> getComparator(char t){
 		switch(t) {
-		case 'h': 
+		case 'h':
 			return null;
 		case 'v':
 			return VolumeComparator.volComparator;

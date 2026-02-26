@@ -44,7 +44,7 @@ public class FileHandler {
 			}
 			return shapes;
 		} catch (FileNotFoundException e) {
-			throw new RuntimeException("File not found" + fileName,e);
+			throw new RuntimeException("File not found " + fileName, e);
 		}
 	}
 
