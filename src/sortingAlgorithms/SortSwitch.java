@@ -18,13 +18,12 @@ public final class SortSwitch {
 			insertionSort.insertionSort(arr, comp);
 			break;
 		case 'm':
-			mergeSort.mergeSort(arr,0,arr.length-1,comp);
+			mergeSort.mergeSort(arr, 0, arr.length - 1, comp);
 			break;
 		case 'q':
-			quickSort.quickSort(arr,0,arr.length-1,comp);
+			quickSort.quickSort(arr, 0, arr.length - 1, comp);
 			break;
 		case 's':
-			
 			selectionSort.selectionSort(arr, comp);
 			break;
 		default:
@@ -33,14 +32,15 @@ public final class SortSwitch {
 	}
 
 	public static void someSort(Shape[] array, char comp, char sortType) {
-		while(!isSorted(array,comp)) {	
-			sort(array,comp,sortType);
+		while (!isSorted(array, comp)) {
+			sort(array, comp, sortType);
 		}
 	}
+
 	@SuppressWarnings("unchecked")
 	public static boolean isSorted(Shape[] array, char comp) {
 		for (int i = 0; i < array.length - 1; i++) {
-			if(Comparision.compare(array[i],array[i+1],comp) < 0) {
+			if (Comparision.compare(array[i], array[i + 1], comp) < 0) {
 				return false;
 			}
 		}
