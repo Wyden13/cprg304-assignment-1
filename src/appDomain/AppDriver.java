@@ -32,12 +32,10 @@ public class AppDriver {
 			String lowerArg = arg.toLowerCase();
 
 			if (lowerArg.startsWith("-f")) {
-				String value = arg.substring(2).trim(); // keep original case for path
+				String value = arg.substring(2).trim();
 
 				value = stripOuterQuotes(value);
 
-				// Handle: -f"res\shapes1".txt (quotes appear in the middle)
-				// remove all double quotes inside the filename.
 				value = value.replace("\"", "");
 
 				if (value.isEmpty())
@@ -51,8 +49,7 @@ public class AppDriver {
 				compareType = Character.toLowerCase(arg.charAt(2));
 				System.out.println("Compare by: " + compareType);
 			} else if (lowerArg.startsWith("-s")) {
-				if (arg.length() < 3)
-//					
+				if (arg.length() < 3)					
 					exitWithError("Missing sort type after -s (example: -sQ)");
 				sortType = Character.toLowerCase(arg.charAt(2));
 				;
@@ -61,8 +58,7 @@ public class AppDriver {
 			}
 			;
 		}
-
-//		System.out.println("Sort type: " + sortType);
+		
 		// Validation
 		if (fileName == null)
 			exitWithError("Missing required option: -f <filename>");

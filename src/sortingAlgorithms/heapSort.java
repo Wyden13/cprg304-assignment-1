@@ -15,20 +15,16 @@ public class heapSort {
 		int left = 2 * i + 1;
 		int right = 2 * i + 2;
 
-		// if left child is smaller than root
 		if (left < n && Comparision.compare(arr[left], arr[smallest], t) < 0) {
 			smallest = left;
 		}
 
-		// if right child is smaller than smaller
 		if (right < n && Comparision.compare(arr[right], arr[smallest], t) < 0) {
 			smallest = right;
 		}
 
-		// if smallest is not root
 		if (smallest != i) {
 			swapElements(arr, smallest, i);
-			// Recursively heapify the affected sub-tree
 			heapify(arr, n, smallest, t);
 		}
 	}
@@ -38,11 +34,8 @@ public class heapSort {
 		for (int i = n / 2 - 1; i >= 0; i--) {
 			heapify(arr, n, i, t);
 		}
-		// One by one extract an element from heap
 		for (int i = n - 1; i > 0; i--) {
-			// Move current root to end
 			swapElements(arr, 0, i);
-			// Call min heapify on the reduced heap
 			heapify(arr, i, 0, t);
 		}
 	}
