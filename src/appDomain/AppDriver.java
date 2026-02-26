@@ -48,13 +48,13 @@ public class AppDriver {
 				if (arg.length() < 3)
 					exitWithError("Missing compare type after -t (example: -tH)");
 				compareType = Character.toLowerCase(arg.charAt(2));
-				System.out.println("Compare by: " + compareType);
+				System.out.println("Compare by: " + compareTypeName(compareType));
 			} else if (lowerArg.startsWith("-s")) {
 				if (arg.length() < 3)					
 					exitWithError("Missing sort type after -s (example: -sQ)");
 				sortType = Character.toLowerCase(arg.charAt(2));
 				;
-				System.out.println("Sort type: " + sortType);
+				System.out.println("Sort type: " + sortTypeName(sortType));
 
 			}
 			;
