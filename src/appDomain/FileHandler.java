@@ -15,6 +15,11 @@ import java.util.Scanner;
 
 public class FileHandler {
     private FileHandler() {}
+    /**
+     * takes filename and extracts the data 
+     * @param fileName
+     * @return Shape[] array 
+     */
 
     public static Shape[] readShapesFromFile(String fileName) {
         try (Scanner scanner = new Scanner(new File(fileName))) {
@@ -58,6 +63,13 @@ public class FileHandler {
             throw new RuntimeException("File not found " + fileName, e);
         }
     }
+    /**
+     * get and return shape instance based on the type
+     * @param type
+     * @param a
+     * @param b
+     * @return shape instance
+     */
 
     public static Shape createShape(String type, double a, double b) {
         switch (type.toLowerCase()) {

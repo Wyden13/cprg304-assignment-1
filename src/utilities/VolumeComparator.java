@@ -6,7 +6,6 @@ import shapes.Shape;
 public final class VolumeComparator implements Comparator<Shape> {
 	
 	public static VolumeComparator volComparator = new VolumeComparator();
-	
 	@Override
 	public int compare(Shape a,Shape b) {
 		if(a.calcVolume() > b.calcVolume()) {

@@ -71,11 +71,6 @@ public class AppDriver {
 		Shape[] shapes = FileHandler.readShapesFromFile(fileName);
 		Shape[] sortedShapes = shapes.clone();
 
-		// Print unsorted array
-//		for (Shape s : shapes) {
-//			System.out.println(s);
-//		}
-
 		// Calculate duration of the sort algorithm
 		long startTime = System.nanoTime();
 		SortSwitch.someSort(sortedShapes, compareType, sortType);
