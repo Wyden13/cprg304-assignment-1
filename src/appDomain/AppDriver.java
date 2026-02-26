@@ -40,7 +40,7 @@ public class AppDriver {
 
 				if (value.isEmpty())
 					exitWithError("Missing filename after -f");
-				fileName = "res/shapes1.txt";
+				fileName = value;
 				System.out.println("File: " + fileName);
 
 			} else if (lowerArg.startsWith("-t")) {
@@ -72,9 +72,9 @@ public class AppDriver {
 		Shape[] sortedShapes = shapes.clone();
 
 		// Print unsorted array
-		for (Shape s : shapes) {
-			System.out.println(s);
-		}
+//		for (Shape s : shapes) {
+//			System.out.println(s);
+//		}
 
 		// Calculate duration of the sort algorithm
 		long startTime = System.nanoTime();
