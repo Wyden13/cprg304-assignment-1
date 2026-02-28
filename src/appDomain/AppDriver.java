@@ -37,23 +37,24 @@ public class AppDriver {
 				value = stripOuterQuotes(value);
 
 				value = value.replace("\"", "");
+				value = value.replace("\\","/");
 
 				if (value.isEmpty())
 					exitWithError("Missing filename after -f");
-				fileName = "res/shapes1.txt";
+				fileName = value;
 				System.out.println("File: " + fileName);
 
 			} else if (lowerArg.startsWith("-t")) {
 				if (arg.length() < 3)
 					exitWithError("Missing compare type after -t (example: -tH)");
 				compareType = Character.toLowerCase(arg.charAt(2));
-				System.out.println("Compare by: " + compareType);
+				System.out.println("Compare by: " + compareTypeName(compareType));
 			} else if (lowerArg.startsWith("-s")) {
 				if (arg.length() < 3)					
 					exitWithError("Missing sort type after -s (example: -sQ)");
 				sortType = Character.toLowerCase(arg.charAt(2));
 				;
-				System.out.println("Sort type: " + sortType);
+				System.out.println("Sort type: " + sortTypeName(sortType));
 
 			}
 			;
@@ -70,11 +71,6 @@ public class AppDriver {
 		// Load shapes from file
 		Shape[] shapes = FileHandler.readShapesFromFile(fileName);
 		Shape[] sortedShapes = shapes.clone();
-
-		// Print unsorted array
-		for (Shape s : shapes) {
-			System.out.println(s);
-		}
 
 		// Calculate duration of the sort algorithm
 		long startTime = System.nanoTime();

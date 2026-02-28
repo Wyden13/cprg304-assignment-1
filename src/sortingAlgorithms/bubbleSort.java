@@ -4,7 +4,11 @@ import shapes.Shape;
 import utilities.Comparision;
 
 public final class bubbleSort {
-
+	/**
+	 * Bubble Sort
+	 * @param arr: Shape[]
+	 * @param t: compare type
+	 */
 	public static void bubbleSort(Shape[] arr, char t) {
 		for(int i = 0; i<arr.length-1;i++) {
 			boolean flag = false;

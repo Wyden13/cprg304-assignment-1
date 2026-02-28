@@ -4,7 +4,11 @@ import shapes.Shape;
 import utilities.Comparision;
 
 public final class insertionSort {
-	// public insertionSort() {};
+	/**
+	 * Insertion sort
+	 * @param arr
+	 * @param t
+	 */
 	public static void insertionSort(Shape[] arr, char t) {
 		for (int i = 1; i < arr.length; i++) {
 			Shape key = arr[i];

@@ -5,7 +5,13 @@ import shapes.Shape;
 import utilities.Comparision;
 
 public final class mergeSort {
-	
+	/**
+	 * merge sort
+	 * @param arr
+	 * @param left
+	 * @param right
+	 * @param t
+	 */
 	public static void mergeSort(Shape[] arr, int left, int right,char t){
 	    if (left >= right)
 	        return;

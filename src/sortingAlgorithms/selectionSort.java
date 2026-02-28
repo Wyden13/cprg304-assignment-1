@@ -4,6 +4,12 @@ import utilities.Comparision;
 import shapes.Shape;
 
 public final class selectionSort {
+	/**
+	 * selection sort
+	 * @param arr
+	 * @param i
+	 * @param j
+	 */
 	private static void swapElements(Shape[] arr, int i, int j) {
 		Shape temp = arr[i];
 		arr[i] = arr[j];
